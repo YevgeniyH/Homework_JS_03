@@ -89,13 +89,13 @@ const account = {
    * определенного типа транзакции из всей истории транзакций
    */
     getTransactionTotal(type) {
-        let SumOfTransactionType = 0;
-        for (const transaction of this.transactions) {
+        let sumOfTransactionType = 0;
+        this.transactions.forEach(function (transaction) {
             if (transaction.type === type) {
-                SumOfTransactionType += transaction.amount;
+                sumOfTransactionType += transaction.amount;
             }
-        }
-        return console.log(`Сумма средств по транзакции ${type}: ${SumOfTransactionType}`);
+        });
+        return console.log(`Сумма средств по транзакции ${type}: ${sumOfTransactionType}`);
     }
   
 }
